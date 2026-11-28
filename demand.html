@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>해외 수요 · Beom's Consumer</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="css/app.css?v=050d9973">
+<link rel="stylesheet" href="css/consumer.css?v=e3e503a5">
+<script>
+  // 깜빡임 방지: 저장된 테마를 렌더 전에 적용
+  try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="brand">Beom's Consumer</div>
+  <nav class="tabs">
+    <a class="tab" href="./">오늘</a>
+    <a class="tab" href="export.html">수출 업황</a>
+    <a class="tab on" href="demand.html">해외 수요</a>
+    <a class="tab" href="stocks.html">종목</a>
+    <a class="tab" href="calls.html">컨콜</a>
+  </nav>
+  <div class="top-right">
+    <span class="muted small" id="asof"></span>
+    <button id="theme" class="icon-btn" aria-label="다크 모드 전환" title="다크 모드 전환">◐</button>
+  </div>
+</header>
+
+<main>
+  <div class="page-head"><h1>해외 수요</h1><p>한국 밖의 수요 지표: EU·미국의 화장품 수입(한국 vs 중국), 방한 관광객, 외국인 의료 소비, 검색 관심도, Amazon·TikTok·Reddit.</p></div>
+  <section class="filters" id="filters"></section>
+  <section id="eu"></section>
+  <section id="tour"></section>
+  <section id="med"></section>
+  <section id="trends"></section>
+  <section id="alt"></section>
+  <p class="msg" id="msg">불러오는 중…</p>
+</main>
+
+<footer id="foot"></footer>
+
+<!-- util·plot·dartfmt·fund·stock 은 범스보드 public/js 의 것 (serve.py 가 내준다) — 종목 이름을 누르면 범스보드와 같은 패널 -->
+<script src="js/lock.js?v=26d12712"></script>   <!-- 배포본에서만 잠금 (publish.py) -->
+<script src="js/util.js?v=275b8e39"></script>
+<script src="js/plot.js?v=2915a0c0"></script>
+<script src="js/dartfmt.js?v=5de59fe4"></script>
+<script src="js/fund.js?v=b44a1013"></script>
+<script src="js/stock.js?v=8ebc0655"></script>
+<script src="js/consumer.js?v=01175857"></script>
+</body>
+</html>
